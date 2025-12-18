@@ -20,8 +20,8 @@ import java.util.Set;
  */
 public class BasicDataOperationUsingSet {
     LocalDateTime dateTimeValueToSearch;
-    LocalDateTime[] dateTimeArray;
-    Set<LocalDateTime> dateTimeSet = new HashSet<>();
+    Long[] dateTimeArray;
+    Set<Long> dateTimeSet = new HashSet<>();
 
     /**
      * Конструктор, який iнiцiалiзує об'єкт з готовими даними.
@@ -29,7 +29,7 @@ public class BasicDataOperationUsingSet {
      * @param dateTimeValueToSearch Значення для пошуку
      * @param dateTimeArray Масив LocalDateTime
      */
-    BasicDataOperationUsingSet(LocalDateTime dateTimeValueToSearch, LocalDateTime[] dateTimeArray) {
+    BasicDataOperationUsingSet(LocalDateTime dateTimeValueToSearch, Long[] dateTimeArray) {
         this.dateTimeValueToSearch = dateTimeValueToSearch;
         this.dateTimeArray = dateTimeArray;
         this.dateTimeSet = new HashSet<>(Arrays.asList(dateTimeArray));

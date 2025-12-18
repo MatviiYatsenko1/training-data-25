@@ -1,4 +1,4 @@
-import java.time.LocalDateTime;
+import java.time.long;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -35,7 +35,7 @@ public class BasicDataOperation {
     static final String PATH_TO_DATA_FILE = "list/LocalDateTime.data";
 
     LocalDateTime dateTimeValueToSearch;
-    LocalDateTime[] dateTimeArray;
+    Long dateTimeArray;
 
     private static final String SEPARATOR = "\n" + "=".repeat(80) + "\n";
     private static final String USAGE_MESSAGE = "Використання: java BasicDataOperation <пошукове-значення> \n" +

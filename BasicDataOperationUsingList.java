@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class BasicDataOperationUsingList {
     private LocalDateTime dateTimeValueToSearch;
-    private LocalDateTime[] dateTimeArray;
-    private List<LocalDateTime> dateTimeList;
+    private Long[] dateTimeArray;
+    private List<Long> dateTimeList;
 
     /**
      * Конструктор, який iнiцiалiзує об'єкт з готовими даними.
@@ -29,7 +29,7 @@ public class BasicDataOperationUsingList {
      * @param dateTimeValueToSearch Значення для пошуку
      * @param dateTimeArray Масив LocalDateTime
      */
-    BasicDataOperationUsingList(LocalDateTime dateTimeValueToSearch, LocalDateTime[] dateTimeArray) {
+    BasicDataOperationUsingList(LocalDateTime dateTimeValueToSearch, Long[] dateTimeArray) {
         this.dateTimeValueToSearch = dateTimeValueToSearch;
         this.dateTimeArray = dateTimeArray;
         this.dateTimeList = new ArrayList<>(Arrays.asList(dateTimeArray));

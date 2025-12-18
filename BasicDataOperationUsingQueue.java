@@ -21,8 +21,8 @@ import java.util.PriorityQueue;
  */
 public class BasicDataOperationUsingQueue {
     private LocalDateTime dateTimeValueToSearch;
-    private LocalDateTime[] dateTimeArray;
-    private Queue<LocalDateTime> dateTimeQueue;
+    private Long[] dateTimeArray;
+    private Queue<Long> dateTimeQueue;
 
     /**
      * Конструктор, який iнiцiалiзує об'єкт з готовими даними.
@@ -30,7 +30,7 @@ public class BasicDataOperationUsingQueue {
      * @param dateTimeValueToSearch Значення для пошуку
      * @param dateTimeArray Масив LocalDateTime
      */
-    BasicDataOperationUsingQueue(LocalDateTime dateTimeValueToSearch, LocalDateTime[] dateTimeArray) {
+    BasicDataOperationUsingQueue(LocalDateTime dateTimeValueToSearch, Long[] dateTimeArray) {
         this.dateTimeValueToSearch = dateTimeValueToSearch;
         this.dateTimeArray = dateTimeArray;
         this.dateTimeQueue = new PriorityQueue<>(Arrays.asList(dateTimeArray));
