@@ -21,7 +21,8 @@ import java.util.Set;
 public class BasicDataOperationUsingSet {
     LocalDateTime dateTimeValueToSearch;
     Long[] dateTimeArray;
-    Set<Long> dateTimeSet = new HashSet<>();
+    Set<Long> 
+     new HashSet<>();
 
     /**
      * Конструктор, який iнiцiалiзує об'єкт з готовими даними.
@@ -32,7 +33,8 @@ public class BasicDataOperationUsingSet {
     BasicDataOperationUsingSet(LocalDateTime dateTimeValueToSearch, Long[] dateTimeArray) {
         this.dateTimeValueToSearch = dateTimeValueToSearch;
         this.dateTimeArray = dateTimeArray;
-        this.dateTimeSet = new HashSet<>(Arrays.asList(dateTimeArray));
+        this.
+         new HashSet<>(Arrays.asList(dateTimeArray));
     }
     
     /**

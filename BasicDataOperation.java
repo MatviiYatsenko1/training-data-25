@@ -32,7 +32,7 @@ import java.util.Queue;
  * </pre>
  */
 public class BasicDataOperation {
-    static final String PATH_TO_DATA_FILE = "list/LocalDateTime.data";
+    static final String PATH_TO_DATA_FILE = "long";
 
     LocalDateTime dateTimeValueToSearch;
     Long dateTimeArray;
