@@ -3,22 +3,22 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.Long;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Клас DataFileHandler управляє роботою з файлами даних LocalDateTime.
+ * Клас DataFileHandler управляє роботою з файлами даних Long.
  */
 public class DataFileHandler {
     /**
-     * Завантажує масив об'єктів LocalDateTime з файлу.
+     * Завантажує масив об'єктів Long з файлу.
      * 
      * @param filePath Шлях до файлу з даними.
-     * @return Масив об'єктів LocalDateTime.
+     * @return Масив об'єктів Long.
      */
     public static Long[] loadArrayFromFile(String filePath) {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ISO_DATE_TIME;
-        Long[] temporaryArray = new LocalDateTime[1000];
+        Long[] temporaryArray = new Long[1000];
         int currentIndex = 0;
 
         try (BufferedReader fileReader = new BufferedReader(new FileReader(filePath))) {
@@ -27,7 +27,7 @@ public class DataFileHandler {
                 // Видаляємо можливі невидимі символи та BOM
                 currentLine = currentLine.trim().replaceAll("^\\uFEFF", "");
                 if (!currentLine.isEmpty()) {
-                    LocalDateTime parsedDateTime = LocalDateTime.parse(currentLine, timeFormatter);
+                    Long parsedDateTime = Long.parse(currentLine, timeFormatter);
                     temporaryArray[currentIndex++] = parsedDateTime;
                 }
             }
@@ -35,21 +35,21 @@ public class DataFileHandler {
             ioException.printStackTrace();
         }
 
-        Long[] resultArray = new LocalDateTime[currentIndex];
+        Long[] resultArray = new Long[currentIndex];
         System.arraycopy(temporaryArray, 0, resultArray, 0, currentIndex);
 
         return resultArray;
     }
 
     /**
-     * Зберігає масив об'єктів LocalDateTime у файл.
+     * Зберігає масив об'єктів Long у файл.
      * 
-     * @param dateTimeArray Масив об'єктів LocalDateTime.
+     * @param LongArray Масив об'єктів Long.
      * @param filePath Шлях до файлу для збереження.
      */
-    public static void writeArrayToFile(Long[] dateTimeArray, String filePath) {
+    public static void writeArrayToFile(Long[] LongArray, String filePath) {
         try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(filePath))) {
-            for (LocalDateTime dateTimeElement : dateTimeArray) {
+            for (Long dateTimeElement : LongArray) {
                 fileWriter.write(dateTimeElement.toString());
                 fileWriter.newLine();
             }

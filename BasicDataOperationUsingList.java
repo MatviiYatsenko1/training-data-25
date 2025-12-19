@@ -1,44 +1,44 @@
-import java.time.LocalDateTime;
+import java.time.Long;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * Клас BasicDataOperationUsingList реалізує операції з колекціями типу ArrayList для даних LocalDateTime.
+ * Клас BasicDataOperationUsingList реалізує операції з колекціями типу ArrayList для даних Long.
  * 
  * <p>Методи класу:</p>
  * <ul>
  *   <li>{@link #executeDataOperations()} - Виконує комплекс операцій з даними.</li>
- *   <li>{@link #performArraySorting()} - Упорядковує масив елементів LocalDateTime.</li>
- *   <li>{@link #findInArray()} - Здійснює пошук елемента в масиві LocalDateTime.</li>
+ *   <li>{@link #performArraySorting()} - Упорядковує масив елементів Long.</li>
+ *   <li>{@link #findInArray()} - Здійснює пошук елемента в масиві Long.</li>
  *   <li>{@link #locateMinMaxInArray()} - Визначає найменше і найбільше значення в масиві.</li>
- *   <li>{@link #sortList()} - Сортує колекцію List з LocalDateTime.</li>
+ *   <li>{@link #sortList()} - Сортує колекцію List з Long.</li>
  *   <li>{@link #findInList()} - Пошук конкретного значення в списку.</li>
  *   <li>{@link #locateMinMaxInList()} - Пошук мінімального і максимального значення в списку.</li>
  * </ul>
  */
 public class BasicDataOperationUsingList {
-    private LocalDateTime dateTimeValueToSearch;
-    private Long[] dateTimeArray;
+    private Long LongValueToSearch;
+    private Long[] LongArray;
     private List<Long> dateTimeList;
 
     /**
      * Конструктор, який iнiцiалiзує об'єкт з готовими даними.
      * 
-     * @param dateTimeValueToSearch Значення для пошуку
-     * @param dateTimeArray Масив LocalDateTime
+     * @param LongValueToSearch Значення для пошуку
+     * @param LongArray Масив Long
      */
-    BasicDataOperationUsingList(LocalDateTime dateTimeValueToSearch, Long[] dateTimeArray) {
-        this.dateTimeValueToSearch = dateTimeValueToSearch;
-        this.dateTimeArray = dateTimeArray;
-        this.dateTimeList = new ArrayList<>(Arrays.asList(dateTimeArray));
+    BasicDataOperationUsingList(Long LongValueToSearch, Long[] LongArray) {
+        this.LongValueToSearch = LongValueToSearch;
+        this.LongArray = LongArray;
+        this.LongTimeList = new ArrayList<>(Arrays.asList(LongArray));
     }
     
     /**
      * Виконує комплексні операції з структурами даних.
      * 
-     * Метод завантажує масив і список об'єктів LocalDateTime, 
+     * Метод завантажує масив і список об'єктів Long, 
      * здійснює сортування та пошукові операції.
      */
     public void executeDataOperations() {
@@ -61,17 +61,17 @@ public class BasicDataOperationUsingList {
         locateMinMaxInArray();
 
         // зберігаємо відсортований масив до окремого файлу
-        DataFileHandler.writeArrayToFile(dateTimeArray, BasicDataOperation.PATH_TO_DATA_FILE + ".sorted");
+        DataFileHandler.writeArrayToFile(LongArray, BasicDataOperation.PATH_TO_DATA_FILE + ".sorted");
     }
 
     /**
-     * Упорядковує масив об'єктів LocalDateTime за зростанням.
+     * Упорядковує масив об'єктів Long за зростанням.
      * Фіксує та виводить тривалість операції сортування в наносекундах.
      */
     void performArraySorting() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
-        Arrays.sort(dateTimeArray);
+        Arrays.sort(LongArray);
 
         PerformanceTracker.displayOperationTime(timeStart, "упорядкування масиву дати i часу");
     }
@@ -80,16 +80,16 @@ public class BasicDataOperationUsingList {
      * Здійснює пошук конкретного значення в масиві дати та часу.
      */
     void findInArray() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
-        int position = Arrays.binarySearch(this.dateTimeArray, dateTimeValueToSearch);
+        int position = Arrays.binarySearch(this.LongArray, LongValueToSearch);
 
         PerformanceTracker.displayOperationTime(timeStart, "пошук елемента в масивi дати i часу");
 
         if (position >= 0) {
-            System.out.println("Елемент '" + dateTimeValueToSearch + "' знайдено в масивi за позицією: " + position);
+            System.out.println("Елемент '" + LongValueToSearch + "' знайдено в масивi за позицією: " + position);
         } else {
-            System.out.println("Елемент '" + dateTimeValueToSearch + "' відсутній в масиві.");
+            System.out.println("Елемент '" + LongValueToSearch + "' відсутній в масиві.");
         }
     }
 
@@ -97,17 +97,17 @@ public class BasicDataOperationUsingList {
      * Визначає найменше та найбільше значення в масиві дати та часу.
      */
     void locateMinMaxInArray() {
-        if (dateTimeArray == null || dateTimeArray.length == 0) {
+        if (LongArray == null || LongArray.length == 0) {
             System.out.println("Масив є пустим або не ініціалізованим.");
             return;
         }
 
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
-        LocalDateTime minValue = dateTimeArray[0];
-        LocalDateTime maxValue = dateTimeArray[0];
+        Long minValue = LongArray[0];
+        Long maxValue = LongArray[0];
 
-        for (LocalDateTime currentDateTime : dateTimeArray) {
+        for (Long currentDateTime : LongArray) {
             if (currentDateTime.isBefore(minValue)) {
                 minValue = currentDateTime;
             }
@@ -126,16 +126,16 @@ public class BasicDataOperationUsingList {
      * Шукає конкретне значення дати та часу в колекції ArrayList.
      */
     void findInList() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
-        int position = Collections.binarySearch(this.dateTimeList, dateTimeValueToSearch);
+        int position = Collections.binarySearch(this.dateTimeList, LongValueToSearch);
 
         PerformanceTracker.displayOperationTime(timeStart, "пошук елемента в List дати i часу");        
 
         if (position >= 0) {
-            System.out.println("Елемент '" + dateTimeValueToSearch + "' знайдено в ArrayList за позицією: " + position);
+            System.out.println("Елемент '" + LongValueToSearch + "' знайдено в ArrayList за позицією: " + position);
         } else {
-            System.out.println("Елемент '" + dateTimeValueToSearch + "' відсутній в ArrayList.");
+            System.out.println("Елемент '" + LongValueToSearch + "' відсутній в ArrayList.");
         }
     }
 
@@ -143,15 +143,15 @@ public class BasicDataOperationUsingList {
      * Визначає найменше і найбільше значення в колекції ArrayList з датами.
      */
     void locateMinMaxInList() {
-        if (dateTimeList == null || dateTimeList.isEmpty()) {
+        if (LongTimeList == null || dateTimeList.isEmpty()) {
             System.out.println("Колекція ArrayList є пустою або не ініціалізованою.");
             return;
         }
 
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
-        LocalDateTime minValue = Collections.min(dateTimeList);
-        LocalDateTime maxValue = Collections.max(dateTimeList);
+        Long minValue = Collections.min(dateTimeList);
+        Long maxValue = Collections.max(dateTimeList);
 
         PerformanceTracker.displayOperationTime(timeStart, "визначення мiнiмальної i максимальної дати в List");
 
@@ -160,11 +160,11 @@ public class BasicDataOperationUsingList {
     }
 
     /**
-     * Упорядковує колекцію List з об'єктами LocalDateTime за зростанням.
+     * Упорядковує колекцію List з об'єктами Long за зростанням.
      * Відстежує та виводить час виконання операції сортування.
      */
     void sortList() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         Collections.sort(dateTimeList);
 

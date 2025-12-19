@@ -247,7 +247,7 @@ public class BasicDataOperationUsingMap {
      */
     private void printHashtable() {
         System.out.println("\n=== Пари ключ-значення в Hashtable ===");
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         for (Map.Entry<Pet, String> entry : hashtable.entrySet()) {
             System.out.println("  " + entry.getKey() + " -> " + entry.getValue());
@@ -262,7 +262,7 @@ public class BasicDataOperationUsingMap {
      * Перезаписує hashtable відсортованими даними.
      */
     private void sortHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         // Створюємо список ключів і сортуємо за природним порядком Pet
         List<Pet> sortedKeys = new ArrayList<>(hashtable.keySet());
@@ -285,7 +285,7 @@ public class BasicDataOperationUsingMap {
      * Використовує Pet.hashCode() та Pet.equals() для пошуку.
      */
     void findByKeyInHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         boolean found = hashtable.containsKey(KEY_TO_SEARCH_AND_DELETE);
 
@@ -304,7 +304,7 @@ public class BasicDataOperationUsingMap {
      * Сортує список Map.Entry за значеннями та використовує бінарний пошук.
      */
     void findByValueInHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         // Створюємо список Entry та сортуємо за значеннями
         List<Map.Entry<Pet, String>> entries = new ArrayList<>(hashtable.entrySet());
@@ -334,7 +334,7 @@ public class BasicDataOperationUsingMap {
      * Додає новий запис до Hashtable.
      */
     void addEntryToHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         hashtable.put(KEY_TO_ADD, VALUE_TO_ADD);
 
@@ -347,7 +347,7 @@ public class BasicDataOperationUsingMap {
      * Видаляє запис з Hashtable за ключем.
      */
     void removeByKeyFromHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         String removedValue = hashtable.remove(KEY_TO_SEARCH_AND_DELETE);
 
@@ -364,7 +364,7 @@ public class BasicDataOperationUsingMap {
      * Видаляє записи з Hashtable за значенням.
      */
     void removeByValueFromHashtable() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         List<Pet> keysToRemove = new ArrayList<>();
         for (Map.Entry<Pet, String> entry : hashtable.entrySet()) {
@@ -391,7 +391,7 @@ public class BasicDataOperationUsingMap {
     private void printTreeMap() {
         System.out.println("\n=== Пари ключ-значення в TreeMap ===");
 
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
         for (Map.Entry<Pet, String> entry : treeMap.entrySet()) {
             System.out.println("  " + entry.getKey() + " -> " + entry.getValue());
         }
@@ -404,7 +404,7 @@ public class BasicDataOperationUsingMap {
      * Використовує Pet.compareTo() для навігації по дереву.
      */
     void findByKeyInTreeMap() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         boolean found = treeMap.containsKey(KEY_TO_SEARCH_AND_DELETE);
 
@@ -423,7 +423,7 @@ public class BasicDataOperationUsingMap {
      * Сортує список Map.Entry за значеннями та використовує бінарний пошук.
      */
     void findByValueInTreeMap() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         // Створюємо список Entry та сортуємо за значеннями
         List<Map.Entry<Pet, String>> entries = new ArrayList<>(treeMap.entrySet());
@@ -453,7 +453,7 @@ public class BasicDataOperationUsingMap {
      * Додає новий запис до TreeMap.
      */
     void addEntryToTreeMap() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         treeMap.put(KEY_TO_ADD, VALUE_TO_ADD);
 
@@ -466,7 +466,7 @@ public class BasicDataOperationUsingMap {
      * Видаляє запис з TreeMap за ключем.
      */
     void removeByKeyFromTreeMap() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         String removedValue = treeMap.remove(KEY_TO_SEARCH_AND_DELETE);
 
@@ -483,7 +483,7 @@ public class BasicDataOperationUsingMap {
      * Видаляє записи з TreeMap за значенням.
      */
     void removeByValueFromTreeMap() {
-        long timeStart = System.nanoTime();
+        Long timeStart = System.nanoTime();
 
         List<Pet> keysToRemove = new ArrayList<>();
         for (Map.Entry<Pet, String> entry : treeMap.entrySet()) {

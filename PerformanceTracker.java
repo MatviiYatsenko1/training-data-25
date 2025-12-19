@@ -8,9 +8,9 @@ public class PerformanceTracker {
      * @param startTime Початковий час операції в наносекундах.
      * @param operationName Назва операції.
      */
-    public static void displayOperationTime(long startTime, String operationName) {
-        long finishTime = System.nanoTime();
-        long executionTime = (finishTime - startTime);
+    public static void displayOperationTime(Long startTime, String operationName) {
+        Long finishTime = System.nanoTime();
+        Long executionTime = (finishTime - startTime);
         System.out.println("\n========= Тривалість операції '" + operationName + "': " + executionTime + " нс =========");
     }
 }
